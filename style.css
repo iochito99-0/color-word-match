@@ -1,0 +1,77 @@
+body {
+  width: 536px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+h1 {
+  margin: auto;
+  padding: 20px 0 20px 0;
+  width: 536px;
+  color: #ffffff;
+  background-color: black;
+  font-weight: 900;
+  font-size: 2em;
+  text-align: center;
+}
+
+#ti {
+  color: yellow;
+}
+
+.marker {
+  background: linear-gradient(transparent 65%, yellow 50%);
+}
+
+p {
+  color: #413c36;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+#stage {
+  width: 500px;
+  height: 400px;
+  border: solid 18px #d1d1d1;
+  background-color: #d1d1d1;
+  position: relative;
+}
+
+.btn-style {
+  width: 60px;
+  height: 40px;
+  background-color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 130%;
+  font-weight: bold;
+  padding-bottom: 3px;
+  box-shadow:#413c36 1px 1px;
+}
+
+#start {
+  width: 170px;
+  height: 40px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -70%);
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 3px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 130%;
+  font-weight: bold;
+  padding-bottom: 3px;
+  box-shadow:#413c36 1px 1px;
+  letter-spacing: 2px;
+}
+
+#triangle {
+  font-size: 60%;
+  vertical-align: 15%;
+}
