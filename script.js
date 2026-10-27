@@ -46,6 +46,8 @@ function button(index){
 
   btn.classList.add("btn-style")
 
+  btn.style.visibility = "hidden" // 見えないようにしておく
+
   btn.addEventListener("click", handleClick)
 
   stage.appendChild(btn)
@@ -70,7 +72,7 @@ function checkCorrect(){
 
 // スタートボタン
 
-function start() {
+async function start() {
   const btn = document.createElement("button")
   btn.id = "start"
 
@@ -78,13 +80,44 @@ function start() {
 
   stage.appendChild(btn)
 
-  btn.addEventListener("click", () => {
+  btn.addEventListener("click", async () => {
     btn.remove()
     setbtns()
+
+    await countdown()
+
     timerStart()
     countDisplay()
   })
 }
+
+async function countdown() {
+  const label = document.createElement("h2")
+  label.id = "num-c-btn"
+  label.innerHTML = "正解のボタンの数は " + "<span id='btn-c'>" + numOfC + "</span>"
+  stage.appendChild(label)
+
+  const count = document.createElement("h2")
+  count.id = "countdown"
+  stage.appendChild(count);
+
+  for (let i = 3; i >= 1; i--) {
+    count.textContent = i;
+    await new Promise(resolve => setTimeout(resolve, 1000));
+  }
+
+  count.textContent = "START!";
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+  label.remove()
+  count.remove()
+
+  // ボタン出す
+  document
+    .querySelectorAll(".btn-style")
+    .forEach(e => e.style.visibility = "visible");
+}
+
 
 start() // hoverの実装
 
@@ -146,7 +179,7 @@ let clickNumOfC = 0
 
 function countDisplay() {
   const countDisplay = document.getElementById("countDisplay")
-  countDisplay.innerText = `正解のボタンの数：${clickNumOfC}/${numOfC}`
+  countDisplay.innerText = `${clickNumOfC}/${numOfC}`
 }
 
 // スコアシステム作る。三回間違えるごとに一点マイナス
@@ -154,8 +187,3 @@ function countDisplay() {
 
 // 間違ったら配置を全て入れ替える（ハードモード）
 // （連続間違いまたは総間違い回数によってペナルティとして減点もあり）
-
-
-// あと、テトリスとか、ソリティア作りたい
-// 後出し負けじゃんけんみたいなのも 
-// アルカノイド

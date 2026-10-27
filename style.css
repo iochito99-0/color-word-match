@@ -75,3 +75,26 @@ p {
   font-size: 60%;
   vertical-align: 15%;
 }
+
+#countdown {
+  width: 150px;
+  height: 150px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 230%;
+  text-align: center;
+  margin: auto;
+}
+
+#num-c-btn {
+  width: 240px;
+  height: 40px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 130%;
+  text-align: center;
+  margin: auto;
+}
+
+#btn-c {
+  text-align: center;
+  font-size: 150%;
+}
